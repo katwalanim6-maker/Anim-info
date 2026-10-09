@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "ANIM® — Internet Person",
+  "short_name": "ANIM",
+  "description": "Anim Katwal's personal website, projects, gallery, and playground.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f3f0e8",
+  "theme_color": "#f3f0e8",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
