@@ -67,7 +67,17 @@
 .gallery-placeholder strong{font-size:clamp(1.25rem,6vw,2rem)}
 .gallery-note{overflow-wrap:anywhere}
 }
- </style>
+ 
+/* Final responsive gallery correction */
+.gallery-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:auto!important;align-items:stretch;gap:10px!important}
+.gallery-card,.gallery-card:nth-child(1),.gallery-card:nth-child(2),.gallery-card:nth-child(3),.gallery-card:nth-child(4),.gallery-card:nth-child(5),.gallery-card:nth-child(6){grid-row:auto!important;grid-column:auto!important;aspect-ratio:1/1!important;min-width:0;min-height:0;height:auto!important}
+.gallery-card:nth-child(1){grid-column:1/-1!important;aspect-ratio:16/9!important}
+.gallery-card img,.gallery-card video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
+.gallery-card img+.gallery-placeholder,.gallery-video .gallery-placeholder{display:none!important}
+.gallery-card video{z-index:2;background:var(--ink)}
+@media(max-width:700px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.gallery-card,.gallery-card:nth-child(n){grid-column:auto!important;grid-row:auto!important;aspect-ratio:1/1!important}.gallery-card:nth-child(1){grid-column:1/-1!important;aspect-ratio:16/9!important}.gallery-placeholder{padding:10px}.gallery-placeholder strong{font-size:clamp(1.2rem,5.8vw,2rem)}}
+
+</style>
 </head>
 <body>
 <header class="wrap topbar"><a class="logo" href="#home">ANIM<span>®</span></a><div class="status"><i></i> INTERNET PERSON / NEPAL</div><nav class="toplinks"><a href="#work">WORK ↘</a><a href="#gallery">GALLERY ↘</a><a href="#about">WHO?</a><a href="#contact">SAY HI ↗</a><a class="formal-link" href="formal.html">FORMAL PORTFOLIO ↗</a></nav></header>
