@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f3f0e8">\n<link rel="manifest" href="./manifest.webmanifest">\n<link rel="icon" href="./icon.svg" type="image/svg+xml">\n<meta name="apple-mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f3f0e8">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="description" content="Anim Katwal — internet tinkerer, student, and builder of useful digital things.">
 <title>ANIM® — Internet Person</title>
 <style>
@@ -118,6 +122,8 @@ function showTerm(open){terminal.classList.toggle('open',open);toggle.setAttribu
 const cmds={help:'commands: about, work, github, skills, contact, clear, date, exit',about:'Anim Katwal. Student. Internet tinkerer. Learning by building.',work:'scrolling to the projects...',skills:'HTML/CSS · JavaScript · web stuff · Termux · trial & error',github:'opening GitHub...',contact:'scrolling to contact...',date:()=>new Date().toLocaleDateString()};
 function line(t,cls=''){const p=document.createElement('p');p.textContent=t;if(cls)p.className=cls;out.appendChild(p);out.scrollTop=out.scrollHeight}
 document.getElementById('termForm').addEventListener('submit',e=>{e.preventDefault();const raw=input.value.trim();if(!raw)return;const c=raw.toLowerCase();line('› '+raw,'cmd');input.value='';if(c==='clear'){out.innerHTML='';return}if(c==='exit'){showTerm(false);return}if(c==='github'){line(cmds.github);window.open('https://github.com/katwalanim6-maker','_blank','noopener');return}if(c==='work'){line(cmds.work);document.getElementById('work').scrollIntoView({behavior:'smooth'});return}if(c==='contact'){line(cmds.contact);document.getElementById('contact').scrollIntoView({behavior:'smooth'});return}line(c in cmds?(typeof cmds[c]==='function'?cmds[c]():cmds[c]):'unknown command. type help.')});
+
+if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {})); }
 </script>
 </body>
 </html>
